@@ -43,7 +43,7 @@ def main():
 	print("blackjack")
 	print("blackjack payout is 3:2")
 
-	money = read_money
+	money = read_money()
 
 
 	print(f"Money: {money}")
