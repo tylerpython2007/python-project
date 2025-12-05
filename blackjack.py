@@ -31,7 +31,7 @@ def hand_number(hand):
 		aces -= 1
 	return value
 def in_hand(hand):
-	text=" "
+	text=""
 	for numbered_card,suit, _ in hand:
 		if text != "":
 			text += ", "
@@ -44,6 +44,8 @@ def main():
 	print("blackjack payout is 3:2")
 
 	money = read_money
+	money = read_money
+
 	print(f"Money: {money}")
 
 
@@ -70,7 +72,7 @@ def main():
 	
 	print()
 	print("dealers cards: ")
-	print(f"{dealer[0][0]} of {dealer[0][2]}")
+	print(f"{dealer[0][0]} of {dealer[0][1]}")
 	print()
 	print("your cards: ")
 	print(in_hand(player))
@@ -83,9 +85,9 @@ def main():
 			player.append(deck.pop())
 			print("your card: ")
 			print(in_hand(player))
-			if hand_number(player) > 21
+			if hand_number(player) > 21:
 				break
-		elif choice == stand;
+		elif choice == "stand":
 			break
 		else:
 			print("invalid choice")
@@ -94,7 +96,18 @@ def main():
 #dealer
 
 
+	if player_total <= 21:
+		while hand_number(dealer) < 17:
+			dealer.append(deck.pop())
 
-
+	dealer_total = hand_number(dealer) 
+	
+	print ("dealers cards") 	
+	print(in_hand(dealer))
+	print() 
+	print("your points: {player_total}") 
+	print()
+	print("dealers points : {dealer_total}")
+	
 if __name__ == "__main__":
 	main()
