@@ -13,7 +13,7 @@ def whole_deck():
 	deck=[]
 	for suit in suits:
 		for numbered_card, value in numbered_cards:
-			deck.append([numbered_card,suit,vaule])
+			deck.append([numbered_card,suit,value])
 	return deck
 
 def hand_number(hand):
@@ -33,18 +33,21 @@ def hand_number(hand):
 def in_hand(hand):
 	text=" "
 	for numbered_card,suit, _ in hand:
-		if text != "":\ 
+		if text != "":
 			text += ", "
-		text += {numbered_card} of {suit}
+		text += (f"{numbered_card} of {suit}")
 	return text
 	
 
 def main():
 	print("blackjack")
-	
+	print("blackjack payout is 3:2")
+
 	money = read_money
-	print(f"Money: {money.2f}")
-	
+	print(f"Money: {money}")
+
+
+#minimum and  maximum bets
 	while True:
 		try:
 			bet = float(input("Bet amount:  "))
@@ -59,10 +62,37 @@ def main():
 		except ValueError:
 			print("Invald number try again")
 
+#deal card
 
 	deck = whole_deck
 	player = [deck.pop(), deck.pop()]
 	dealer = [deck.pop(), deck.pop()]
+	
+	print()
+	print("dealers cards: ")
+	print(f"{dealer[0][0]} of {dealer[0][2]}")
+	print()
+	print("your cards: ")
+	print(in_hand(player))
+	
+#player
+	while True:
+		print()
+		choice = input("hit or stand? (hit/stand):  ")
+		if choice == "hit":
+			player.append(deck.pop())
+			print("your card: ")
+			print(in_hand(player))
+			if hand_number(player) > 21
+				break
+		elif choice == stand;
+			break
+		else:
+			print("invalid choice")
+
+	player_total = hand_number(player)
+#dealer
+
 
 
 
