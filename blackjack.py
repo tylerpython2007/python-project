@@ -105,7 +105,7 @@ def main():
 	
 	print ("dealers cards") 	
 	print(in_hand(dealer))
-	print() 
+	print()
 	print("your points: {player_total}") 
 	print()
 	print("dealers points : {dealer_total}")
@@ -131,24 +131,25 @@ def main():
 	print(f"Money: {money:.2f}")
 	money_to_txt(money)
 
-	if money < 5:
-		print()
-		print("you do not have enough money")
-		buy =  input("buy more chps? (y/n): ").lower()
-		if buy == "y":
-			try:
-				add = float(input("amount: "))
-				money += add
-				money_to_txt(money)
-			except ValueError:
-				print("invalid number")
-		else:
-			break
-	again = input("\nplay again? (y/n): ").lower()
-	if again != "y":
-		break
-	
+	     if money < 5:
+            print()
+            print("you do not have enough money")
+            buy = input("buy more chps? (y/n): ").lower()
+            if buy == "y":
+                try:
+                    add = float(input("amount: "))
+                    money += add
+                    money_to_txt(money)
+                except ValueError:
+                    print("invalid number")
+            else:
+                break  
 
-	
+        
+        again = input("\nplay again? (y/n): ").lower()
+        if again != "y":
+            break
+
 if __name__ == "__main__":
-	main()
+    main()
+
