@@ -80,7 +80,7 @@ def main():
 #player
 	while True:
 		print()
-		choice = input("hit or stand? (hit/stand):  ")
+		choice = input("hit or stand? (hit/stand):  ").lower()
 		if choice == "hit":
 			player.append(deck.pop())
 			print("your card: ")
@@ -108,6 +108,29 @@ def main():
 	print("your points: {player_total}") 
 	print()
 	print("dealers points : {dealer_total}")
+
+	if player_total > 21:
+		print()
+		print("you lose")
+		money -= bet
+
+	elif dealer_total > 21 or player_total > dealer total:
+		print("you win")
+		if player_total == 21 and len(player) == 2:
+			money += bet *1.5
+		else:
+			money += bet
+	elif dealer_total > player_total:
+		print()
+		print("you lose")
+		money -= bet
+	else:
+		print("tie!")
+	money = round(money, 2)
+	print(f"Money: {money:.2f}")
+	money_to_txt(money)
+	
+
 	
 if __name__ == "__main__":
 	main()
