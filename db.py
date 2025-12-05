@@ -13,13 +13,14 @@ def read_money():
 			row = next(reader, None)
 			if row:
 				return float(row[0])
+			else:
+				return 100.0
 	except Exception:
 		return 100.0
-	return 100.00
 
 def money_to_txt(amount):
 	try: 
-		with open(FILEOPEN, "w", newline="") as file:
+		with open(FILENAME, "w", newline="") as file:
 			writer = csv.writer(file)
 			writer.writerow([round(amount,2)])
 	except Exception as e:
