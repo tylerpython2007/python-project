@@ -115,7 +115,7 @@ def main():
 		print("you lose")
 		money -= bet
 
-	elif dealer_total > 21 or player_total > dealer total:
+	elif dealer_total > 21 or player_total > dealer_total:
 		print("you win")
 		if player_total == 21 and len(player) == 2:
 			money += bet *1.5
@@ -142,11 +142,11 @@ def main():
 				money_to_txt(money)
 			except ValueError:
 				print("invalid number")
-			else:
-				break
-	again = input("\nplay againn? (y/n): ").lower
-		if again != "y":
-			break	
+		else:
+			break
+	again = input("\nplay again? (y/n): ").lower()
+	if again != "y":
+		break
 	
 
 	
