@@ -44,7 +44,7 @@ def main():
 	print("blackjack payout is 3:2")
 
 	money = read_money
-	money = read_money
+
 
 	print(f"Money: {money}")
 
@@ -66,7 +66,8 @@ def main():
 
 #deal card
 
-	deck = whole_deck
+	deck = whole_deck()
+	random.shuffle(deck)
 	player = [deck.pop(), deck.pop()]
 	dealer = [deck.pop(), deck.pop()]
 	
@@ -129,6 +130,23 @@ def main():
 	money = round(money, 2)
 	print(f"Money: {money:.2f}")
 	money_to_txt(money)
+
+	if money < 5:
+		print()
+		print("you do not have enough money")
+		buy =  input("buy more chps? (y/n): ").lower()
+		if buy == "y":
+			try:
+				add = float(input("amount: "))
+				money += add
+				money_to_txt(money)
+			except ValueError:
+				print("invalid number")
+			else:
+				break
+	again = input("\nplay againn? (y/n): ").lower
+		if again != "y":
+			break	
 	
 
 	
