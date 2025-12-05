@@ -1,7 +1,7 @@
 import csv
 import os
 
-FILENAME"money.txt"
+FILENAME = "money.txt"
 
 def read_money():
 	if not os.path.exists(FILENAME):
@@ -15,6 +15,7 @@ def read_money():
 				return float(row[0])
 	except Exception:
 		return 100.0
+	return 100.00
 
 def money_to_txt(amount):
 	try: 
@@ -22,4 +23,4 @@ def money_to_txt(amount):
 			writer = csv.writer(file)
 			writer.writerow([round(amount,2)])
 	except Exception as e:
-		print("error writing file:")
+		print("error writing file:", e)
